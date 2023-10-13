@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="timer-container">
+        <div class="card col-lg-4">
+            <div class="card-body">
+              <h5 class="card-title" id="Timer1">Timer</h5>
+              <p class="card-text" >10 sec.</p>
+              <a href="#" class="btn btn-primary" id="btn1">start</a>
+            </div>
+            
+        </div>
+        
+          <div class="card col-lg-4">
+            <div class="card-body">
+              <h5 class="card-title" id="Timer2">Timer</h5>
+              <p class="card-text" >20 sec.</p>
+              <a href="#" class="btn btn-primary" id="btn2">start</a>
+            </div>
+          </div>
+        
+
+          <div class="card col-lg-4">
+            <div class="card-body">
+              <h5 class="card-title" id="Timer3">Timer</h5>
+              <p class="card-text">45 sec.</p>
+              <a href="#" class="btn btn-primary" id="btn3">start</a>
+            </div>
+          </div> 
+          <br><br><br>
+    </div>
+
+    <br><br><br><br><br><br>
+
+
+    
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+
+
+<script>
+    function startTimer(duration, display) {
+    var timer = duration;
+    setInterval(function () {
+    seconds = parseInt(timer % 60, 10);
+    seconds = seconds < 10 ? "0" + seconds : seconds;
+    display.textContent = seconds;
+
+    if (--timer < 0) {
+      timer = "00";
+    }
+    if(timer==0){
+        stop();
+    }
+  }, 1000);
+}
+
+window.onload = function () {
+document.querySelector("#btn3").addEventListener("click",function(){
+    var duration = 45; 
+  var display = document.querySelector('#Timer3'); 
+  startTimer(duration, display);
+})
+
+document.querySelector("#btn2").addEventListener("click",function(){
+    var duration1 = 20;
+  var display1 = document.querySelector("#Timer2");
+  startTimer(duration1,display1);
+})
+
+document.querySelector("#btn1").addEventListener("click",function(){
+    var duration2 = 10;
+  var display2 = document.querySelector("#Timer1");
+startTimer(duration2,display2);
+})
+ 
+  
+};
+
+</script>  
+
+</body>
+</html>

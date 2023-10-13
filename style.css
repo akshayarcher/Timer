@@ -1,0 +1,14 @@
+/* body{
+    background: black;
+} */
+.card{
+
+   margin: auto;
+   margin-top: 20px;
+   margin-bottom: 20px;
+ 
+}
+
+.timer-container{
+    text-align: center;
+}
